@@ -47,6 +47,11 @@ public class PlayerBehavior : MonoBehaviour {
         anim.SetFloat("Speed", Mathf.Abs(xMove));
     }
 
+    public bool GetFacingRight()
+    {
+        return facingRight;
+    }
+
     // ----- Private function(s)
     private void flip()
     {
