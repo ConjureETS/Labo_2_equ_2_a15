@@ -47,7 +47,6 @@ public class PlayerBehavior : MonoBehaviour {
         anim.SetFloat("Speed", Mathf.Abs(xMove));
     }
 
-    // ----- Private function(s)
     private void flip()
     {
         facingRight = !facingRight;
