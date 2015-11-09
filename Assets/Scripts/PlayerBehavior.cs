@@ -52,7 +52,6 @@ public class PlayerBehavior : MonoBehaviour {
         return facingRight;
     }
 
-    // ----- Private function(s)
     private void flip()
     {
         facingRight = !facingRight;
