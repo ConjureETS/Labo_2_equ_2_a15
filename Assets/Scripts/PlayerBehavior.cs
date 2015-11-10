@@ -29,6 +29,14 @@ public class PlayerBehavior : MonoBehaviour {
             anim.SetBool("Ground", false);
             rb.AddForce(new Vector2(0, jumpForce));
         }
+
+		//for the shooting animations
+		if (Input.GetButtonDown ("Fire1")) {
+			anim.SetBool("Shooting", true);
+
+		} else {
+			anim.SetBool ("Shooting", false);
+		}
     }
 
     void FixedUpdate()
