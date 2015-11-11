@@ -20,6 +20,9 @@ public class FireScript : MonoBehaviour {
     {
         //Instantiate new rocket
         Rigidbody2D rocketClone = (Rigidbody2D)Instantiate(rocket, transform.position, Quaternion.identity);
+       
+        //Sets rocket to be the player's
+        rocketClone.gameObject.GetComponent<RocketBehaviour>().SetProperty(true);
 
         if (!facingRight)
         {
