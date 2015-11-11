@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5020362}
   - 61: {fileID: 6163544}
   - 114: {fileID: 11431192}
+  - 95: {fileID: 9512508}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -60,6 +61,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .330000013, y: .720000029}
+--- !u!95 &9512508
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 532dc94ed04ade946a636626daddb305, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11431192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2995a96f18c88c3499b43774e78a5e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground: {fileID: 0}
 --- !u!212 &21249000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -103,7 +122,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 532dc94ed04ade946a636626daddb305, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183722}

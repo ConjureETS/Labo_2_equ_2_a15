@@ -5,6 +5,8 @@ public class EnemyBehavior : MonoBehaviour {
 
     private float direction = 1.0f;
     private Rigidbody2D rb;
+	private bool facingRight = true;
+
 
     // Ground
     public GameObject ground;
@@ -24,5 +26,17 @@ public class EnemyBehavior : MonoBehaviour {
             direction *= -1.0f;
 
         rb.velocity = Vector2.right * direction;
+
+		if ((direction < 0 && facingRight) || (direction > 0 && !facingRight))
+			flip();
+		
+	}
+	
+	private void flip()
+	{
+		facingRight = !facingRight;
+		Vector3 scale = transform.localScale;
+		scale.x *= -1;
+		transform.localScale = scale;
 	}
 }
