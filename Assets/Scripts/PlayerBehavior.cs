@@ -22,6 +22,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        gameObject.GetComponent<CollisionCheck>().initText(gameObject.GetComponent<Health>().getHP());
     }
 
     // Update is called once per frame
