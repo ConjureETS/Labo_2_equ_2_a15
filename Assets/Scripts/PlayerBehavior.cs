@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBehavior : MonoBehaviour {
+public class PlayerBehavior : MonoBehaviour
+{
 
     public float maxSpeed = 50.0f;
 
@@ -16,27 +17,32 @@ public class PlayerBehavior : MonoBehaviour {
     private Animator anim;
     private bool facingRight = true;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(grounded && Input.GetAxis("Vertical") > 0.0f)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (grounded && Input.GetAxis("Vertical") > 0.0f)
         {
             anim.SetBool("Ground", false);
             rb.AddForce(new Vector2(0, jumpForce));
         }
 
-		//for the shooting animations
-		if (Input.GetButtonDown ("Fire1")) {
-			anim.SetBool("Shooting", true);
+        //for the shooting animations
+        if (Input.GetButtonDown("Fire1"))
+        {
+            anim.SetBool("Shooting", true);
 
-		} else {
-			anim.SetBool ("Shooting", false);
-		}
+        }
+        else
+        {
+            anim.SetBool("Shooting", false);
+        }
     }
 
     void FixedUpdate()

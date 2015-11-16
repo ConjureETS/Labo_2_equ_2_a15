@@ -31,4 +31,9 @@ public class Health : MonoBehaviour {
     {
         return hp;
     }
+
+    public void setMaxHP(int amount)
+    {
+        maxHP = amount;
+    }
 }
