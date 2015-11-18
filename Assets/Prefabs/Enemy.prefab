@@ -15,7 +15,7 @@ GameObject:
   - 95: {fileID: 9512508}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2995a96f18c88c3499b43774e78a5e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 2
   ground: {fileID: 0}
 --- !u!212 &21249000
 SpriteRenderer:
@@ -127,6 +128,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 532dc94ed04ade946a636626daddb305, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183722}

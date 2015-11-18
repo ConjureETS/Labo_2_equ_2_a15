@@ -6,6 +6,9 @@ public class EnemyBehavior : MonoBehaviour {
     private float direction = 1.0f;
     private Rigidbody2D rb;
 	private bool facingRight = true;
+	private bool dead = false;
+
+	public int HP = 2;
 
 
     // Ground
@@ -29,6 +32,11 @@ public class EnemyBehavior : MonoBehaviour {
 
 		if ((direction < 0 && facingRight) || (direction > 0 && !facingRight))
 			flip();
+
+		// If the enemy has zero or fewer hit points and isn't dead yet...
+		if(HP <= 0 && !dead)
+			// ... call the death function.
+			Death ();
 		
 	}
 	
@@ -39,4 +47,20 @@ public class EnemyBehavior : MonoBehaviour {
 		scale.x *= -1;
 		transform.localScale = scale;
 	}
+
+	public void Hurt()
+	{
+		// Reduce the number of hit points by one.
+		HP--;
+	}
+
+	void Death()
+	{	
+		// Set dead to true.
+		dead = true;
+		// delete the enemy
+		Destroy(gameObject);
+	}
+
+
 }
