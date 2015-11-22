@@ -6,9 +6,9 @@ public class EnemyBehavior : MonoBehaviour {
     private float direction = 1.0f;
     private Rigidbody2D rb;
 	private bool facingRight = true;
-	private bool dead = false;
+    private bool dead = false;
 
-	public int HP = 2;
+    private Health hp;
 
 
     // Ground
@@ -20,6 +20,7 @@ public class EnemyBehavior : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
 
         groundBounds = ground.GetComponent<Renderer>().bounds;
+        hp = GetComponent<Health>();
     }
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class EnemyBehavior : MonoBehaviour {
 			flip();
 
 		// If the enemy has zero or fewer hit points and isn't dead yet...
-		if(HP <= 0 && !dead)
+		if(GetComponent<Health>().getHP() == 0 && !dead)
 			// ... call the death function.
 			Death ();
 		
@@ -46,12 +47,6 @@ public class EnemyBehavior : MonoBehaviour {
 		Vector3 scale = transform.localScale;
 		scale.x *= -1;
 		transform.localScale = scale;
-	}
-
-	public void Hurt()
-	{
-		// Reduce the number of hit points by one.
-		HP--;
 	}
 
 	void Death()

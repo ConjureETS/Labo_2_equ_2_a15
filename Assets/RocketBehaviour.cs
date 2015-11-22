@@ -24,7 +24,7 @@ public class RocketBehaviour : MonoBehaviour {
 		// If it hits an enemy...
 		if (collision.gameObject.tag == "Enemy") {
 			// ... find the Enemy script and call the Hurt function.
-			collision.gameObject.GetComponent<EnemyBehavior> ().Hurt ();
+			collision.gameObject.GetComponent<Health> ().removeHP(1);
 
 			// call the explosion animation
 			Explode ();

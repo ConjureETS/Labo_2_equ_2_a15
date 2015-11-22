@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6163544}
   - 114: {fileID: 11431192}
   - 95: {fileID: 9512508}
+  - 114: {fileID: 11482776}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -43,7 +44,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -89,8 +90,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2995a96f18c88c3499b43774e78a5e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 2
   ground: {fileID: 0}
+--- !u!114 &11482776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28110cf2b286c534c94e41ea7e145ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 2
 --- !u!212 &21249000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,6 +143,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHP
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
