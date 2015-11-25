@@ -74,4 +74,28 @@ public class PlayerBehavior : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
+
+    private void ResetGame()
+    {
+        Application.LoadLevel(Application.loadedLevelName);
+        Time.timeScale = 1f;
+    }
+    
+    public void Death()
+    {
+        StartCoroutine(ResetAfterSeconds(5));
+        Time.timeScale = 0f;
+    }
+
+    private IEnumerator ResetAfterSeconds(int seconds)
+    {
+        float pauseEndTime = Time.realtimeSinceStartup + seconds;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return null; // Attend un frame
+        }
+
+        // Reset and count deaths
+        ResetGame();
+    }
 }

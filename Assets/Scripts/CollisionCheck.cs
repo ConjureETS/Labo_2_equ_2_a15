@@ -19,7 +19,10 @@ public class CollisionCheck : MonoBehaviour {
             health.text = "Health: " + gameObject.GetComponent<Health>().removeHP(1);
         }
 
-
+        if(gameObject.GetComponent<Health>().getHP() == 0)
+        {
+            gameObject.GetComponent<PlayerBehavior>().Death();
+        }
     }
 
 
