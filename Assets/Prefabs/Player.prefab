@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &137562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 430186}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &177424
 GameObject:
   m_ObjectHideFlags: 0
@@ -8,8 +23,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 437628}
-  m_Layer: 8
-  m_Name: GroundCheck
+  m_Layer: 0
+  m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -32,13 +47,25 @@ GameObject:
   - 114: {fileID: 11472154}
   - 114: {fileID: 11478382}
   - 114: {fileID: 11485758}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &430186
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.116999999, z: 0}
+  m_LocalScale: {x: .922599614, y: .922599435, z: .922599435}
+  m_Children: []
+  m_Father: {fileID: 462904}
+  m_RootOrder: 0
 --- !u!4 &437628
 Transform:
   m_ObjectHideFlags: 1
@@ -46,11 +73,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.116999999, z: 0}
-  m_LocalScale: {x: .922599614, y: .922599435, z: .922599435}
+  m_LocalPosition: {x: .0854000002, y: .0140000004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462904}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &462904
 Transform:
   m_ObjectHideFlags: 1
@@ -61,6 +88,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 430186}
   - {fileID: 437628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -137,11 +165,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 2
   grounded: 1
-  groundCheck: {fileID: 437628}
+  groundCheck: {fileID: 430186}
+  wallCheck: {fileID: 437628}
+  groundRadius: .00999999978
+  wallCheckRadius: .00999999978
   ground:
     serializedVersion: 2
-    m_Bits: 4294967039
-  jumpForce: 35
+    m_Bits: 256
+  jumpForce: 175
 --- !u!114 &11472154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,6 +248,22 @@ Prefab:
       propertyPath: bomb
       value: 
       objectReference: {fileID: 172872, guid: c08879c52df47d54aa37a52cd902cc42, type: 2}
+    - target: {fileID: 0}
+      propertyPath: jumpForce
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ground.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197158}

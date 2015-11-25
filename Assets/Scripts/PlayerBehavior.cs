@@ -9,7 +9,9 @@ public class PlayerBehavior : MonoBehaviour
     // Jump Stuff
     public bool grounded = true;
     public Transform groundCheck;
-    private float groundRadius = 0.1f;
+    public Transform wallCheck;
+    public float groundRadius = 0.01f;
+    public float wallCheckRadius = 0.01f;
     public LayerMask ground;
     public float jumpForce = 7.0f;
 
@@ -28,7 +30,7 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (grounded && Input.GetAxis("Vertical") > 0.0f)
+        if (grounded && Input.GetButtonDown("Jump"))
         {
             anim.SetBool("Ground", false);
             rb.AddForce(new Vector2(0, jumpForce));
@@ -53,6 +55,11 @@ public class PlayerBehavior : MonoBehaviour
         anim.SetFloat("vSpeed", rb.velocity.y);
 
         float xMove = Input.GetAxis("Horizontal");
+        if(Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, ground))
+        {
+            if((xMove > 0 && facingRight) || (xMove < 0 && !facingRight))
+                xMove = 0;
+        }
         rb.velocity = new Vector2(xMove * maxSpeed, rb.velocity.y);
 
         if ((xMove < 0 && facingRight) || (xMove > 0 && !facingRight))
