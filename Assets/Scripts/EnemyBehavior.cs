@@ -8,7 +8,7 @@ public class EnemyBehavior : MonoBehaviour {
 	private bool facingRight = true;
     private bool dead = false;
 
-    private Health hp;
+    //private Health hp;
 
 
     // Ground
@@ -20,7 +20,7 @@ public class EnemyBehavior : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
 
         groundBounds = ground.GetComponent<Renderer>().bounds;
-        hp = GetComponent<Health>();
+        //hp = GetComponent<Health>();
     }
 	
 	// Update is called once per frame

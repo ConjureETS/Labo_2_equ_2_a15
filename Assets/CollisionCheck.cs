@@ -6,6 +6,7 @@ public class CollisionCheck : MonoBehaviour {
 
     public Text health;
 
+
     public void initText(int hp)
     {
         health.text = "Health: " + hp;
@@ -17,5 +18,9 @@ public class CollisionCheck : MonoBehaviour {
         {
             health.text = "Health: " + gameObject.GetComponent<Health>().removeHP(1);
         }
+
+
     }
+
+
 }
