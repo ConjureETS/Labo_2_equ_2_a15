@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class PlayerBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private bool facingRight = true;
+
+    public Text deathText;
 
     // Use this for initialization
     void Start()
@@ -89,10 +92,12 @@ public class PlayerBehavior : MonoBehaviour
     {
         Application.LoadLevel(Application.loadedLevelName);
         Time.timeScale = 1f;
+        deathText.text = "";
     }
     
     public void Death()
     {
+        deathText.text = "You died";
         StartCoroutine(ResetAfterSeconds(5));
         Time.timeScale = 0f;
     }
