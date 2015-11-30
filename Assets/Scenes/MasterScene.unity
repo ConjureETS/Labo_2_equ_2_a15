@@ -841,6 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a395f7557cbd20d45826e16e4264ee4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPickup: {fileID: 8300000, guid: a48a7087d05490f4b913e6cd1d177494, type: 3}
   health: {fileID: 1113329686}
 --- !u!61 &1736051096
 BoxCollider2D:

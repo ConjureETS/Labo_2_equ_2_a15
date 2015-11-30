@@ -15,6 +15,8 @@ public class PlayerBehavior : MonoBehaviour
     public LayerMask ground;
     public float jumpForce = 7.0f;
 
+    public AudioSource audioJump;
+
     private Rigidbody2D rb;
     private Animator anim;
     private bool facingRight = true;
@@ -32,6 +34,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (grounded && Input.GetButtonDown("Jump"))
         {
+            audioJump.Play();
             anim.SetBool("Ground", false);
             rb.AddForce(new Vector2(0, jumpForce));
         }
