@@ -7,10 +7,13 @@ public class FireScript : MonoBehaviour {
     public Vector3 rocket_position_offset;
     public float speed = 10f;
 
+    public AudioSource audioRocket;
+
     // Update is called once per frame
     void Update () {
         if (Input.GetButtonDown("Fire1"))
         {
+            audioRocket.Play();
             FireRocket(gameObject.GetComponent<PlayerBehavior>().GetFacingRight());
         }
             

@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2568094dbdb537b49880253a6eedeada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPickup: {fileID: 8300000, guid: a48a7087d05490f4b913e6cd1d177494, type: 3}
 --- !u!212 &21218118
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +101,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: audioPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: a48a7087d05490f4b913e6cd1d177494, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a48a7087d05490f4b913e6cd1d177494, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176050}
