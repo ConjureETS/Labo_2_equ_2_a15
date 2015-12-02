@@ -5,6 +5,7 @@ public class LayBombs : MonoBehaviour
 {
 	[HideInInspector]
 	public bool bombLaid = false;		// si une bombe a été lancé
+	[HideInInspector]
 	public int bombCount = 0;			// nombre bomb que le joueur possede
 
 	public GameObject bomb;				// Prefab of the bomb.

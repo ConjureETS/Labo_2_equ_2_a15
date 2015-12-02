@@ -3,9 +3,7 @@ using System.Collections;
 
 public class Bomb : MonoBehaviour
 {
-	public float bombRadius = 10f;			// Radius within which enemies are killed.
-	public float bombForce = 100f;			// Force that enemies are thrown from the blast.
-
+	public float bombRadius = 0.5f;			// Radius within which enemies are killed.
 	public float fuseTime = 1.5f;
 	public GameObject explosion;			// Prefab of explosion effect.
 

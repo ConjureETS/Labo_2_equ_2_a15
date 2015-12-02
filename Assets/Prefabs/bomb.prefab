@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 412680}
   - 50: {fileID: 5021002}
   - 114: {fileID: 11417938}
-  - 61: {fileID: 6160456}
   - 58: {fileID: 5858278}
   - 212: {fileID: 21297412}
   m_Layer: 0
@@ -60,20 +59,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
---- !u!61 &6160456
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172872}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 3.66000009, y: 4.5999999}
+  m_Radius: 2.25
 --- !u!114 &11417938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,8 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50c00a886c5b1a4196e8364e365416a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombRadius: 10
-  bombForce: 100
+  bombRadius: .5
   fuseTime: 1.5
   explosion: {fileID: 100000, guid: 340a9e7d5164c9c4fba1dc34dc50b866, type: 2}
 --- !u!212 &21297412
@@ -128,7 +113,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Radius
-      value: 4
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bombRadius
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

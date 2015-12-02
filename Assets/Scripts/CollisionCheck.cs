@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class CollisionCheck : MonoBehaviour {
 
+	//[HideInInspector]
     public Text health;
 
 
@@ -19,11 +20,24 @@ public class CollisionCheck : MonoBehaviour {
             health.text = "Health: " + gameObject.GetComponent<Health>().removeHP(1);
         }
 
+
+
         if(gameObject.GetComponent<Health>().getHP() == 0)
         {
             gameObject.GetComponent<PlayerBehavior>().Death();
         }
     }
+
+	void OnTriggerEnter2D(Collider2D col)
+	{			
+		if(col.tag == "Player")
+		{
+
+			health.text = "Health: " + gameObject.GetComponent<Health>().addHP(3);
+			
+		}
+		
+	}
 
 
 }

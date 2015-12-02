@@ -924,7 +924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioPickup: {fileID: 8300000, guid: a48a7087d05490f4b913e6cd1d177494, type: 3}
-  health: {fileID: 1113329686}
 --- !u!61 &1736051096
 BoxCollider2D:
   m_ObjectHideFlags: 0
