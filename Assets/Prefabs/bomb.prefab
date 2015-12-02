@@ -74,6 +74,7 @@ MonoBehaviour:
   bombRadius: .5
   fuseTime: 1.5
   explosion: {fileID: 100000, guid: 340a9e7d5164c9c4fba1dc34dc50b866, type: 2}
+  explode: {fileID: 8300000, guid: dab22f74a5dfe954d8917770deaee808, type: 3}
 --- !u!212 &21297412
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -123,6 +124,22 @@ Prefab:
       propertyPath: bombRadius
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dab22f74a5dfe954d8917770deaee808, type: 3}
+    - target: {fileID: 0}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explode
+      value: 
+      objectReference: {fileID: 8300000, guid: dab22f74a5dfe954d8917770deaee808, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172872}

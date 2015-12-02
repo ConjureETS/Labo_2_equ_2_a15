@@ -10,7 +10,7 @@ public class Bomb : MonoBehaviour
 
 	private LayBombs layBombs;				// Reference to the player's LayBombs script.
 
-
+	public AudioClip explode;
 
 
 	void Awake ()
@@ -40,7 +40,9 @@ public class Bomb : MonoBehaviour
 
 	public void Explode()
 	{
-		
+
+		AudioSource.PlayClipAtPoint(explode, transform.position);
+
 		// The player is now free to lay bombs when he has them.
 		layBombs.bombLaid = false;
 
