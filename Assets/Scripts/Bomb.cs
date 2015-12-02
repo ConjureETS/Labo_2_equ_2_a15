@@ -47,7 +47,7 @@ public class Bomb : MonoBehaviour
 		layBombs.bombLaid = false;
 
 		// Find all the colliders on the Enemies layer within the bombRadius.
-		Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, bombRadius, 1 << LayerMask.NameToLayer("Enemy"));
+		Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, bombRadius, 1 << LayerMask.NameToLayer("Enemies"));
 
 		// For each collider...
 		foreach(Collider2D col in enemies)
@@ -58,13 +58,6 @@ public class Bomb : MonoBehaviour
 			{
 				// Find the Enemy script and set the enemy's health to zero.
 				rb.gameObject.GetComponent<Health>().removeHP(1000);
-
-				// Find a vector from the bomb to the enemy.
-				Vector3 deltaPos = rb.transform.position - transform.position;
-
-				// Apply a force in this direction with a magnitude of bombForce.
-				Vector3 force = deltaPos.normalized * bombForce;
-				rb.AddForce(force);
 			}
 		}
 
